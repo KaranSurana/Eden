@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@500&family=Roboto:wght@300&400&500display=swap');
+* {
+   margin: 0px;
+   padding: 0px;
+   font-family: sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+div.convFormDynamic {
+  
+    width: calc(100% - 33px);
+    margin: 10px auto 15px;
+    padding: 0 !important;
+    position: relative;
+    /* box-shadow: 0 0 5px 5px rgba(222, 222, 222, 0.4); */
+}
+
+div.convFormDynamic input.userInputDynamic {
+    border: none;
+    padding: 6px 6px;
+    outline: none;
+    font-size: 0.905rem;
+    float: left;
+    width: 72%;
+    height: 25%;
+    line-height: 1.3em;
+    min-height: 1.7em;
+    max-height: 10rem;
+    display: block;
+    max-width: 72%;
+    margin-right: 2.5%;
+}
+
+
+#convForm{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    top: 80%;
+    
+  }
+
+ 
+
+div.conv-form-wrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%;
+    height: 1px;
+}
+div.conv-form-wrapper div#messages {
+    max-height: 71vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: auto !important;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE 11 */
+}
+div.conv-form-wrapper * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+div.conv-form-wrapper div#messages:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+div.conv-form-wrapper {
+    position: relative;
+}
+div.conv-form-wrapper div.wrapper-messages {
+    position: relative;
+    height: 600px;
+    overflow-y: scroll;
+    transition: margin 0.1s;
+}
+
+@media (max-width: 767px) {
+    div.conv-form-wrapper div.wrapper-messages, div.conv-form-wrapper div#messages {
+        max-height: 71vh;
+    }
+}
+
+div.conv-form-wrapper div.wrapper-messages::-webkit-scrollbar, div#feed ul::-webkit-scrollbar, div.conv-form-wrapper div.options::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}
+
+input.userInputDynamic.error {
+    color: #ac0000 !important;
+}
+input.userInputDynamic {
+    border-radius: 3px;
+    margin: 7px 10px;
+    position: relative;
+    top: -10px;
+    left: 20px;
+}
+
+div.conv-form-wrapper div#messages {
+    position: relative;
+    bottom: 0;
+    margin-left: -5px;
+    height: auto !important;
+    width: 97%;
+    padding-bottom: 20px;
+}
+div.conv-form-wrapper div.options {
+    word-wrap: normal;
+    white-space: nowrap;
+    overflow-x: scroll;
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    transform: translateY(-5px);
+}
+
+div.conv-form-wrapper div.message:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+div.conv-form-wrapper  div.message.ready.rtol {
+    animation: slideRtoLIn 0.5s ease;
+    transform-origin: 0 0 0;
+}
+div.conv-form-wrapper div.message.ready.ltor {
+    animation: slideLtoRIn 0.5s ease;
+    transform-origin: 0 0 0;
+}
+div.conv-form-wrapper  div#messages div.message {
+    border-radius: 20px;
+    padding: 12px 22px;
+    font-size: 0.905rem;
+    color: #333;
+    display: inline-block;
+    padding: 10px 15px 8px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    float: right;
+    clear: both;
+    max-width: 65%;
+    word-wrap: break-word;
+}
+div.conv-form-wrapper  div#messages div.message.to {
+    background: rgb(37, 45, 254);
+    background: linear-gradient(
+      90deg,
+      rgba(37, 45, 254, 1) 5%,
+      rgba(249, 29, 233, 1) 72%
+    );
+    color: #fff;
+    float: left;
+    border-top-left-radius: 0;
+}
+div.conv-form-wrapper div#messages div.message.from {
+    background: linear-gradient(to left, #e707c9 0%, #fb98b1 100%);
+    color: #000000;
+    border-top-right-radius: 0;
+    color: white;
+}
+.message.to+.message.from, .message.from+.message.to {
+    margin-top: 15px;
+}
+@keyframes slideRtoLIn {
+    0% {
+        margin-right: -50px;
+    }
+
+    100% {
+        margin-right: 0px;
+    }
+}
+@keyframes slideLtoRIn {
+    0% {
+        margin-left: -50px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+
+div.convFormDynamic button.submit {
+   
+    padding: 3px;
+    border: none;
+    float: left;
+    margin: 5px;
+    color: #050136;
+    cursor: pointer;
+    border-radius:50%;
+    font-size: 1.1rem;
+    width: 36px;
+    height: 35px;
+    margin-top: 8px;
+    background: #fff;
+    outline: none !important;
+}
+
+
+.glow-on-hover {
+    width: 60px;
+    height: 60px;
+    border: none;
+    outline: none;
+    color: rgb(7, 105, 253);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 70%;
+  }
+  
+  button:hover, button:focus {
+    outline: none;
+  }
+  input[type="button"]
+  {
+      border: none;
+      outline:none;
+  }
+  
+  
+  
+  .glow-on-hover:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff004c
+    );
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc( 10px + 100% + 10px);
+    height: calc(10px + 100% + 10px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 70%;
+  }
+  
+  .glow-on-hover:active {
+    color: rgb(4, 27, 56);
+  }
+  
+  .glow-on-hover:active:after {
+    background: transparent;
+  }
+  
+  .glow-on-hover:hover:before {
+    opacity: 1;
+  }
+  
+  .glow-on-hover:after {
+
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: rgb(23, 0, 34);
+    left: 0;
+    top: 0;
+    border-radius: 70%;
+    border: none;
+    outline: none;
+  }
+  .submit{
+    color: rgb(23, 0, 34);
+    background: white !important;
+    
+  }
+  
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.convFormDynamic button.submit:hover {
+    background: rgb(37, 45, 254);
+    background: linear-gradient(
+      90deg,
+      rgba(37, 45, 254, 1) 5%,
+      rgba(249, 29, 233, 1) 72%
+    );
+    color: rgb(23, 0, 34);
+}
+
+button.submit.glow {
+    box-shadow: 0 0 10px 5px rgba(6, 197, 166, 0.4);
+}
+.no-border {
+    border: none !important;
+}
+.dragscroll {
+    cursor: grab;
+}
+div.conv-form-wrapper div#messages::-webkit-scrollbar, div#feed ul::-webkit-scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}
+span.clear {
+    display: block;
+    clear: both;
+}
+
+
+.header-wrapper {
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  background: #030116;
+  color: white;
+  width: auto;
+  height: 20px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 25px;
+  padding-right: 20px;
+  text-align: right;
+}
+.logo{
+	position: fixed;
+    top: -35px;
+	left: 5%;
+	padding: 2% 0%;
+    height: 100%;
+    cursor: pointer;
+}
+
+body {
+    overflow-x: hidden;
+    background: #030116;
+}
+
+
+.awesome {
+    padding: 2% 0%;
+    background-color: #00e1ff;
+    background-image: linear-gradient(to top, #0d8bc5 0%, #00e1ff 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-family: 'Roboto';
+    font-weight: 500;
+        width:100%;
+        text-align: center;
+        font-size:50px;
+        letter-spacing: 3px;
+        font-weight: bold;
+    
+  
+
+        
+
+
+}
+
+
+.chat_box{
+    background: #030116;
+    width:55%;
+    height: 60vh;
+    min-height: 60vh;
+    margin-top: 3%;
+    padding: 2% 5%;
+    background-color: #080224;
+    box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(0, 0, 0, 0.25);
+    clear: both;
+    overflow-x: hidden;
+    border-radius: 20px;
+}
+
+
+.chat_box::-webkit-scrollbar {
+  width: 5px;
+
+  
+}
+
+.chat_box::-webkit-scrollbar-track {
+   width: 5px;
+   background-color: #030116;
+}
+
+.chat_box::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   height: 2px;
+   background-color: #a4a4a55e;
+    box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(0, 0, 0, 0.25);
+} 
+
+
+@-webkit-keyframes colorchange {
+  0% {
+
+    color: lightblue;
+  }
+
+  10% {
+
+    color: #8e44ad;
+  }
+
+  20% {
+
+    color: #1abc9c;
+  }
+
+  30% {
+
+    color: #7afad8;
+  }
+
+  40% {
+
+    color: lightblue;
+  }
+
+  50% {
+
+    color: #70b8ff;
+  }
+
+  60% {
+
+    color: lightblue;
+  }
+
+  70% {
+
+    color: #2980b9;
+  }
+  80% {
+
+    color: #67d962;
+  }
+
+  90% {
+
+    color: #62c7d9;
+  }
+
+  100% {
+
+    color: #9ee84f;
+  }
+}
+
+#convForm .submit{
+    position: relative;
+    left: 8%;
+    padding-top: 4px;
+    padding-left: 5px;
+
+}
